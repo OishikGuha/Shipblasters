@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-
-
+    
     Vector2 mousePos;
 
     float angle;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

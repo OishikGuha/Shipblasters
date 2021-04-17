@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
         transform.Translate(Vector3.up / speedDivisor * speed, Space.Self);    
     }
 
-    public void Damage(ShipController shipController)
+    public void Damage(EnemyShip shipController)
     {
         shipController.health -= damage;
         Debug.Log("hit enemy!");
@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
         // Debug.Log("hit!");
         if(other.tag == "Ship")
         {   
-            ShipController shipCtrl = other.GetComponent<ShipController>();
+            EnemyShip shipCtrl = other.GetComponent<EnemyShip>();
             if(shipCtrl ==  selfShip)
             {
                 Debug.Log("hit self!");
