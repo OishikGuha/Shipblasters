@@ -8,8 +8,10 @@ public class UIManager : MonoBehaviour
 {
 
     public TextMeshProUGUI health;
-    
+    public TextMeshProUGUI enemyHealth;
+    [Space]
     public ShipController ship;
+    public EnemyShip enemyShip;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +23,6 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         health.text = $"HEALTH: {ship.health.ToString()}";
+        enemyHealth.text = $"ENEMY HEALTH: {enemyShip.health.ToString()}";
     }
 }

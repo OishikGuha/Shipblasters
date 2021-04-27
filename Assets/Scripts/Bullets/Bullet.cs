@@ -9,18 +9,35 @@ public class Bullet : MonoBehaviour
     public float damage = 10f;
 
     public float speedDivisor = 4000f;
+    public bool isEnemy;
+
+    public float minimumRandomAngle;
+    public float maximumRandomAngle;
 
     ShipController selfShip;
 
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        diff.Normalize();
+        if(!isEnemy)
+        {
+            Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            diff.Normalize();
 
-        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);    
+            float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);    
+        }
+        else
+        {
+            Vector3 diff = GameObject.FindObjectOfType<ShipController>().transform.position - transform.position;
+            diff.Normalize();
 
+            transform.LookAt(FindObjectOfType<ShipController>().transform.position, Vector3.up);
+
+            float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90 + Random.Range(minimumRandomAngle, maximumRandomAngle)); 
+        }
+        
         Destroy(gameObject, 4);
     }
 
@@ -37,6 +54,13 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void DamagePlayer(ShipController shipController)
+    {
+        shipController.health -= damage;
+        Debug.Log("hit enemy!");
+        Destroy(gameObject);
+    }
+
     public void GetSelfShip(ShipController PselfShip)
     {
         selfShip = PselfShip;
@@ -45,18 +69,15 @@ public class Bullet : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other) 
     {
         // Debug.Log("hit!");
-        if(other.tag == "Ship")
+        if(other.tag == "Enemy Ship" && !isEnemy)
         {   
             EnemyShip shipCtrl = other.GetComponent<EnemyShip>();
-            if(shipCtrl ==  selfShip)
-            {
-                Debug.Log("hit self!");
-            }
-            else
-            {
-                // the bullet damages the enemy
-                Damage(shipCtrl);
-            }
+            Damage(shipCtrl);
+        }
+        else if(other.tag == "Ship" && isEnemy)
+        {
+            ShipController shipCtrl = other.GetComponent<ShipController>();
+            DamagePlayer(shipCtrl);
         }
     }
 }

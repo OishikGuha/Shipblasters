@@ -6,7 +6,6 @@ public class ShipController : MonoBehaviour
 {
 
     public float speed = 10f;
-
     public float speedDivisor = 4000f;
     public float turningDivisor = 10f;
     [Space]
@@ -15,6 +14,8 @@ public class ShipController : MonoBehaviour
     [Space]
     public bool ally;
     public float health = 100f;
+    [Space]
+    public GameObject explosionParticle;    
 
     float horizontal;
     float vertical;
@@ -37,7 +38,7 @@ public class ShipController : MonoBehaviour
             Die();
         }
 
-        if(Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space))
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
         }
@@ -50,7 +51,8 @@ public class ShipController : MonoBehaviour
     }
 
     public void Die()
-    {
+    {   
+        Instantiate(explosionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

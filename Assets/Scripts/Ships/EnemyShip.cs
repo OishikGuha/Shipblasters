@@ -13,19 +13,25 @@ public class EnemyShip : MonoBehaviour
     public Transform turret;
     [Space]
     public float health = 100f;
+    public float bulletDelay;
+    public float bulletDamage = 1f;
+    public float accuracy = 20f;
     [Space]
     public float minDistance = 4f;
+    [Space]
+    public GameObject explosionParticle;
 
     float horizontal;
     float vertical;
 
-    Transform PlayerShip;
+    public Transform PlayerShip;
     float distFromPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerShip = FindObjectOfType<ShipController>().transform;
+        StartCoroutine("Shoot");
     }
 
     // Update is called once per frame
@@ -52,6 +58,7 @@ public class EnemyShip : MonoBehaviour
 
     void Die()
     {
+        Instantiate(explosionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
@@ -63,5 +70,20 @@ public class EnemyShip : MonoBehaviour
 
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+    }
+
+    IEnumerator Shoot()
+    {
+        var instBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+        Bullet instBulletScript = instBullet.GetComponent<Bullet>();
+        instBulletScript.maximumRandomAngle = accuracy;
+        instBulletScript.minimumRandomAngle = -accuracy;
+        instBulletScript.isEnemy = true;
+        instBulletScript.damage = bulletDamage;
+
+        Debug.Log("shot bullet!");
+
+        yield return new WaitForSeconds(bulletDelay);
+        StartCoroutine("Shoot");
     }
 }
