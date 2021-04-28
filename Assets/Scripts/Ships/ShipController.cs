@@ -28,8 +28,8 @@ public class ShipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");        
-        vertical = Input.GetAxisRaw("Vertical");        
+        horizontal = Input.GetAxis("Horizontal");        
+        vertical = Input.GetAxis("Vertical");        
         Move();
 
         if(health <=0)
