@@ -9,9 +9,11 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI health;
     public TextMeshProUGUI enemyHealth;
+    public TextMeshProUGUI enemiesKilledText;
     [Space]
     public ShipController ship;
     public EnemyShip enemyShip;
+    public static int enemiesKilled;
 
     // Start is called before the first frame update
     void Start()
@@ -24,5 +26,6 @@ public class UIManager : MonoBehaviour
     {
         health.text = $"HEALTH: {ship.health.ToString()}";
         enemyHealth.text = $"ENEMY HEALTH: {enemyShip.health.ToString()}";
+        enemiesKilledText.text = $"ENEMIES KILLED: {enemiesKilled}";
     }
 }

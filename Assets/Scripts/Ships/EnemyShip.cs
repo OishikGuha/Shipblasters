@@ -59,6 +59,7 @@ public class EnemyShip : MonoBehaviour
     void Die()
     {
         Instantiate(explosionParticle, transform.position, Quaternion.identity);
+        UIManager.enemiesKilled++;
         Destroy(gameObject);
     }
 
@@ -74,6 +75,7 @@ public class EnemyShip : MonoBehaviour
 
     IEnumerator Shoot()
     {
+        // bullet setup
         var instBullet = Instantiate(bullet, transform.position, Quaternion.identity);
         Bullet instBulletScript = instBullet.GetComponent<Bullet>();
         instBulletScript.maximumRandomAngle = accuracy;
@@ -81,7 +83,6 @@ public class EnemyShip : MonoBehaviour
         instBulletScript.isEnemy = true;
         instBulletScript.damage = bulletDamage;
 
-        Debug.Log("shot bullet!");
 
         yield return new WaitForSeconds(bulletDelay);
         StartCoroutine("Shoot");

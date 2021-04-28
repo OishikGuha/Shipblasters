@@ -9,8 +9,7 @@ public class ShipController : MonoBehaviour
     public float speedDivisor = 4000f;
     public float turningDivisor = 10f;
     [Space]
-    public GameObject bullet;
-    public Transform turret;
+    public Transform turret;                
     [Space]
     public bool ally;
     public float health = 100f;
@@ -37,11 +36,6 @@ public class ShipController : MonoBehaviour
         {
             Die();
         }
-
-        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-        {
-            Shoot();
-        }
     }
 
     public void Move()
@@ -54,11 +48,5 @@ public class ShipController : MonoBehaviour
     {   
         Instantiate(explosionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
-    }
-
-    public void Shoot()
-    {
-        var instObj = Instantiate(bullet, transform.position, Quaternion.identity);
-        instObj.GetComponent<Bullet>().GetSelfShip(this);
     }
 }

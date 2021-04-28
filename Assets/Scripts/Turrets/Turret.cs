@@ -5,6 +5,8 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     
+    public GameObject bullet;
+
     Vector2 mousePos;
 
     float angle;
@@ -17,5 +19,15 @@ public class Turret : MonoBehaviour
 
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
+    }
+
+    public virtual void Shoot()
+    {
+        var instObj = Instantiate(bullet, transform.position, Quaternion.identity);
     }
 }

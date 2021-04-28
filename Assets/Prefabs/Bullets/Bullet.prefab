@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 16feb921490ef2e44abab0c3b88f315e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,6 +100,9 @@ MonoBehaviour:
   speed: 100
   damage: 5
   speedDivisor: 4000
+  isEnemy: 0
+  minimumRandomAngle: 0
+  maximumRandomAngle: 0
 --- !u!61 &-7925185257279642788
 BoxCollider2D:
   m_ObjectHideFlags: 0
