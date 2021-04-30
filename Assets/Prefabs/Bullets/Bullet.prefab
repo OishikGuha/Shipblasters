@@ -4903,7 +4903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  damage: 5
+  damage: 10
   speedDivisor: 4000
   isEnemy: 0
   minimumRandomAngle: 0

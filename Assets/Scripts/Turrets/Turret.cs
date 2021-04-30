@@ -6,10 +6,13 @@ public class Turret : MonoBehaviour
 {
     
     public GameObject bullet;
+    public bool applyDamageOnBullet; 
+    public float damage;
 
     Vector2 mousePos;
 
     float angle;
+
 
     // Update is called once per frame
     void Update()
@@ -29,5 +32,9 @@ public class Turret : MonoBehaviour
     public virtual void Shoot()
     {
         var instObj = Instantiate(bullet, transform.position, Quaternion.identity);
+        if(applyDamageOnBullet)
+        {
+            instObj.GetComponent<Bullet>().damage = damage;
+        }
     }
 }

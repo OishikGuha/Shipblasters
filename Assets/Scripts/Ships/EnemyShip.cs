@@ -60,6 +60,9 @@ public class EnemyShip : MonoBehaviour
     {
         Instantiate(explosionParticle, transform.position, Quaternion.identity);
         UIManager.enemiesKilled++;
+        CameraAnimations.Shake();
+        AudioManager.Play("Explosion");
+
         Destroy(gameObject);
     }
 

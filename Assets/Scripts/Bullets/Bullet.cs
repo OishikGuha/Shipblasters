@@ -50,14 +50,12 @@ public class Bullet : MonoBehaviour
     public void Damage(EnemyShip shipController)
     {
         shipController.health -= damage;
-        Debug.Log("hit enemy!");
         Destroy(gameObject);
     }
 
     public void DamagePlayer(ShipController shipController)
     {
         shipController.health -= damage;
-        Debug.Log("hit enemy!");
         Destroy(gameObject);
     }
 
