@@ -13,9 +13,6 @@ public class EnemyShip : MonoBehaviour
     public Transform turret;
     [Space]
     public float health = 100f;
-    public float bulletDelay;
-    public float bulletDamage = 1f;
-    public float accuracy = 20f;
     [Space]
     public float minDistance = 4f;
     [Space]
@@ -31,7 +28,6 @@ public class EnemyShip : MonoBehaviour
     void Start()
     {
         PlayerShip = FindObjectOfType<ShipController>().transform;
-        StartCoroutine("Shoot");
     }
 
     // Update is called once per frame
@@ -74,20 +70,5 @@ public class EnemyShip : MonoBehaviour
 
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
-    }
-
-    IEnumerator Shoot()
-    {
-        // bullet setup
-        var instBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-        Bullet instBulletScript = instBullet.GetComponent<Bullet>();
-        instBulletScript.maximumRandomAngle = accuracy;
-        instBulletScript.minimumRandomAngle = -accuracy;
-        instBulletScript.isEnemy = true;
-        instBulletScript.damage = bulletDamage;
-
-
-        yield return new WaitForSeconds(bulletDelay);
-        StartCoroutine("Shoot");
     }
 }

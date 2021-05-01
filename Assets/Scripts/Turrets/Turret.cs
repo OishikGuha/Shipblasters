@@ -8,11 +8,17 @@ public class Turret : MonoBehaviour
     public GameObject bullet;
     public bool applyDamageOnBullet; 
     public float damage;
+    public float delay = 0.1f;
 
     Vector2 mousePos;
+    public bool canShoot;
+    public bool endedCooldown;
 
-    float angle;
 
+    private void Start() 
+    {
+        canShoot = true;    
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,9 +29,17 @@ public class Turret : MonoBehaviour
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && canShoot)
         {
             Shoot();
+            canShoot = false;
+            endedCooldown = false;
+        }
+
+        if(!canShoot && !endedCooldown)
+        {
+            endedCooldown = true;
+            StartCoroutine("CanShoot");
         }
     }
 
@@ -36,5 +50,12 @@ public class Turret : MonoBehaviour
         {
             instObj.GetComponent<Bullet>().damage = damage;
         }
+    }
+
+    IEnumerator CanShoot()
+    {
+        yield return new WaitForSeconds(delay);
+        Debug.Log("a");
+        canShoot = true;
     }
 }
