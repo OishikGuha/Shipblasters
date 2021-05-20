@@ -160,6 +160,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7240036551437515159, guid: 98fa7217de97b1b48b4bff391997f4a3, type: 3}
+  applyDamageOnBullet: 0
+  damage: 3
+  delay: 0.1
+  canShoot: 0
+  endedCooldown: 0
+  shot: 0
+  whenShot:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4637155078910476149
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +214,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7240036551437515159, guid: 98fa7217de97b1b48b4bff391997f4a3, type: 3}
+  applyDamageOnBullet: 0
+  damage: 3
+  delay: 0.1
+  canShoot: 0
+  endedCooldown: 0
+  shot: 0
+  whenShot:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6155394936263525408
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,3 +432,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7240036551437515159, guid: 98fa7217de97b1b48b4bff391997f4a3, type: 3}
+  applyDamageOnBullet: 0
+  damage: 3
+  delay: 0.1
+  canShoot: 0
+  endedCooldown: 0
+  shot: 0
+  whenShot:
+    m_PersistentCalls:
+      m_Calls: []

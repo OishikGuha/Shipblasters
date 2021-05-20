@@ -15,17 +15,23 @@ public class UIManager : MonoBehaviour
     public EnemyShip enemyShip;
     public static int enemiesKilled;
 
+    bool gottenShip;
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        if(!gottenShip)
+        {
+            ship = FindObjectOfType<ShipController>();
+            gottenShip = true;
+        }
+
         health.text = $"HEALTH: {ship.health.ToString()}";
-        enemyHealth.text = $"ENEMY HEALTH: {enemyShip.health.ToString()}";
-        enemiesKilledText.text = $"ENEMIES KILLED: {enemiesKilled}";
+        enemiesKilledText.text = $"{enemiesKilled}";
     }
 }

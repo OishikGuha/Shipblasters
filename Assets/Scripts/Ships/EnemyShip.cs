@@ -24,15 +24,17 @@ public class EnemyShip : MonoBehaviour
     public Transform PlayerShip;
     float distFromPlayer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        PlayerShip = FindObjectOfType<ShipController>().transform;
-    }
+    bool gottenPlayer = false;
 
     // Update is called once per frame
     void Update()
     {
+        if(!gottenPlayer)
+        {
+            PlayerShip = FindObjectOfType<ShipController>().transform;
+            gottenPlayer = true;
+        }
+
         // calculates distance from player
         distFromPlayer = Vector2.Distance(transform.position, PlayerShip.position);
 

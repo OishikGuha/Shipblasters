@@ -14,37 +14,37 @@ public class Bullet : MonoBehaviour
     public float minimumRandomAngle;
     public float maximumRandomAngle;
 
+    public float destroyDelay = 2f;
+
     ShipController selfShip;
 
     // Start is called before the first frame update
-    void Start()
+    void Start()    
     {
         if(!isEnemy)
         {
-            Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-            diff.Normalize();
-
-            float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);    
+            MoveStart();
         }
         else
         {
-            Vector3 diff = GameObject.FindObjectOfType<ShipController>().transform.position - transform.position;
-            diff.Normalize();
-
-            transform.LookAt(FindObjectOfType<ShipController>().transform.position, Vector3.up);
-
-            float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90 + Random.Range(minimumRandomAngle, maximumRandomAngle)); 
+            MoveEnemyStart();
         }
         
-        Destroy(gameObject, 4);
+        ToDestroy();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.up / speedDivisor * speed, Space.Self);    
+        if(!isEnemy)
+        {
+            MoveUpdate();
+        }
+        else
+        {
+            MoveEnemyUpdate();
+        }
+        
     }
 
     public void Damage(EnemyShip shipController)
@@ -57,6 +57,41 @@ public class Bullet : MonoBehaviour
     {
         shipController.health -= damage;
         Destroy(gameObject);
+    }
+
+    public virtual void ToDestroy()
+    {
+        Destroy(gameObject, destroyDelay);
+    }
+
+    public virtual void MoveStart()
+    {
+        Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        diff.Normalize();
+
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);        
+    }
+    
+    public virtual void MoveUpdate()
+    {
+        transform.Translate(Vector3.up / speedDivisor * speed, Space.Self);    
+    }
+
+    public virtual void MoveEnemyStart()
+    {
+        Vector3 diff = GameObject.FindObjectOfType<ShipController>().transform.position - transform.position;
+        diff.Normalize();
+
+        transform.LookAt(FindObjectOfType<ShipController>().transform.position, Vector3.up);
+
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90 + Random.Range(minimumRandomAngle, maximumRandomAngle)); 
+    }
+    
+    public virtual void MoveEnemyUpdate()
+    {
+        transform.Translate(Vector3.up / speedDivisor * speed, Space.Self);    
     }
 
     public void GetSelfShip(ShipController PselfShip)

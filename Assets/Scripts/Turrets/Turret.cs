@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Turret : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class Turret : MonoBehaviour
     Vector2 mousePos;
     public bool canShoot;
     public bool endedCooldown;
+    public bool shot;
 
+    public UnityEvent whenShot;
 
     private void Start() 
     {
@@ -32,14 +35,17 @@ public class Turret : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && canShoot)
         {
             Shoot();
+            whenShot.Invoke();
             canShoot = false;
-            endedCooldown = false;
+            endedCooldown = false;  
+            shot = true;
         }
 
         if(!canShoot && !endedCooldown)
         {
             endedCooldown = true;
             StartCoroutine("CanShoot");
+            shot = false;
         }
     }
 
