@@ -9,40 +9,38 @@ public class ShipConstructor : MonoBehaviour
     public bool enemy;
 
     public GameObject tempLight;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float speed;
 
     public void Construct()
     {
+        // Creates the main ship
         GameObject ship = new GameObject(shipScriptableObj.shipName);
         
         ShipController shipController = ship.AddComponent<ShipController>();
         Rigidbody2D shipRb = ship.AddComponent<Rigidbody2D>();
         BoxCollider2D shipBoxCol = ship.AddComponent<BoxCollider2D>();
-        
-        shipRb.gravityScale = 0;
+        SpriteRenderer shipSr = ship.AddComponent<SpriteRenderer>();
 
+        ship.tag = "Ship";
+        shipRb.gravityScale = 0;
+        shipController.speed = shipScriptableObj.speed;
+        
+        // configuring the ship's sprite
+        shipSr.sprite = shipScriptableObj.shipHull;
+        shipSr.sortingLayerName = "Ships";
+        shipSr.sortingOrder = 0;
+
+        // creates the turret
         GameObject shipTurret = Instantiate(shipScriptableObj.shipTurret);
         shipTurret.transform.parent = ship.transform;
-
-        GameObject hull = new GameObject("hull");
-        SpriteRenderer turretSr = hull.AddComponent<SpriteRenderer>();
-
+        SpriteRenderer turretSr = shipTurret.AddComponent<SpriteRenderer>();
+        
+        // configuring the turret's sprite
         turretSr.sprite = shipScriptableObj.shipHull;
         turretSr.sortingLayerName = "Ships";
-
-        
+        turretSr.sortingOrder = 10;
+                
+        // spawns the ship
         Instantiate(tempLight, ship.transform);
-        hull.transform.parent = ship.transform;
     }
 }

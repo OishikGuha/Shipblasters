@@ -61,7 +61,6 @@ public class Turret : MonoBehaviour
     IEnumerator CanShoot()
     {
         yield return new WaitForSeconds(delay);
-        Debug.Log("a");
         canShoot = true;
     }
 }

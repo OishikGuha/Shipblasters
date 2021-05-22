@@ -10,6 +10,7 @@ public class CustomizerShipTransporter : MonoBehaviour
 
     public static GameObject HullObj;
     public static GameObject TurretObj;
+    public static float speed;
 
     public static bool inGame = false;
     public bool spawnd = false;
@@ -25,6 +26,7 @@ public class CustomizerShipTransporter : MonoBehaviour
     {
         HullObj = selector.selectedHull;
         TurretObj = selector.selectedTurret;
+        speed = selector.speed;
 
         if(SceneManager.GetActiveScene().buildIndex == 1)
         {
@@ -39,6 +41,7 @@ public class CustomizerShipTransporter : MonoBehaviour
             {
                 constructor.shipScriptableObj.shipHull = HullObj.GetComponent<SpriteRenderer>().sprite;
                 constructor.shipScriptableObj.shipTurret = TurretObj;
+                constructor.shipScriptableObj.speed = speed;
                 if(!spawnd)
                 {
                     constructor.Construct();

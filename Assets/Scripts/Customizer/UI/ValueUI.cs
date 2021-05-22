@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class CustomizerConstructor : MonoBehaviour
+public class ValueUI : MonoBehaviour
 {
 
     public CustomizerSelector selector;
+    [Space]
+    public Text speedText;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +19,6 @@ public class CustomizerConstructor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    public void Construct()
-    {
-        SceneManager.LoadScene(1);
+        speedText.text = selector.speed.ToString("0");
     }
 }

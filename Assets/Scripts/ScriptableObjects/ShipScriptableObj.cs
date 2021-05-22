@@ -8,4 +8,6 @@ public class ShipScriptableObj : ScriptableObject
     public string shipName;
     public Sprite shipHull;
     public GameObject shipTurret;
+    [Space]
+    public float speed;
 }

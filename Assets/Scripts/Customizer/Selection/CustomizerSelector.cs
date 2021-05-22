@@ -12,6 +12,8 @@ public class CustomizerSelector : MonoBehaviour
     [Space]
     public GameObject selectedTurret;
     public int selectedTurretIndex;
+    [Header("Values")]
+    public float speed;
     
     private void Start() 
     {
@@ -72,9 +74,24 @@ public class CustomizerSelector : MonoBehaviour
         selectedTurretIndex--;
     }
 
+    public void ChangeSpeedBy(float pSpeed)
+    {
+        speed += pSpeed;
+    }
+
     // Save and Load
     public void SaveShip()
     {
         CustomizerSaveSystem.Save(this);
+    }
+
+    public void LoadShip()
+    {
+        ShipData data = CustomizerSaveSystem.Load();
+
+        selectedHullIndex = data.shipToken[0];
+        selectedTurretIndex = data.shipToken[1];
+
+        speed = data.speed;
     }
 }

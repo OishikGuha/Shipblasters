@@ -17,6 +17,6 @@ public class CameraShip : MonoBehaviour
             shipTransform = FindObjectOfType<ShipController>().transform;
         }
 
-        transform.position = new Vector3(0f,0f,-10f) + shipTransform.position;
+        transform.position = new Vector3(0f,0f,-10f) + shipTransform.position + transform.parent.position;
     }
 }

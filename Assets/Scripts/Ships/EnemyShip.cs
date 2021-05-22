@@ -25,6 +25,9 @@ public class EnemyShip : MonoBehaviour
     float distFromPlayer;
 
     bool gottenPlayer = false;
+    
+    
+    bool shaking;
 
     // Update is called once per frame
     void Update()
@@ -47,6 +50,12 @@ public class EnemyShip : MonoBehaviour
             Die();
         }
 
+        if(shaking)
+        {
+            CameraAnimations.Shake();
+            Debug.Log("shaking!");
+        }
+
         // checks if the distance from player is greater than the minimum, if it is it moves.
         if(distFromPlayer > minDistance)
         {
@@ -58,8 +67,9 @@ public class EnemyShip : MonoBehaviour
     {
         Instantiate(explosionParticle, transform.position, Quaternion.identity);
         UIManager.enemiesKilled++;
-        CameraAnimations.Shake();
+        shaking = true;
         AudioManager.Play("Explosion");
+        Debug.Log("Dead!");
 
         Destroy(gameObject);
     }
