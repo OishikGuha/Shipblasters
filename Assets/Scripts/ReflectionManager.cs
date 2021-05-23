@@ -51,7 +51,6 @@ public class ReflectionManager : MonoBehaviour
         {
             if(instObjs[i] != null)
             {        
-                Debug.Log(i);
                 instObjs[i].transform.position = Vector2.down * 1 + (Vector2)objectsToReflect[i].transform.position;
                 instObjs[i].transform.rotation = objectsToReflect[i].transform.rotation;
             }

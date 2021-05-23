@@ -16,21 +16,23 @@ public class ShipController : MonoBehaviour
     [Space]
     public GameObject explosionParticle;    
 
+    Rigidbody2D rb;
     float horizontal;
     float vertical;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");        
-        vertical = Input.GetAxis("Vertical");        
+        vertical = Input.GetAxis("Vertical");
+
         Move();
+        CancelAngDrag();
 
         if(health <=0)
         {
@@ -48,5 +50,18 @@ public class ShipController : MonoBehaviour
     {   
         Instantiate(explosionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    public void Damage(int damage)
+    {
+        health -= damage;
+    }
+
+    void CancelAngDrag()
+    {
+        if(horizontal != 0 || vertical != 0)
+        {
+            rb.angularVelocity = 0;            
+        }
     }
 }
