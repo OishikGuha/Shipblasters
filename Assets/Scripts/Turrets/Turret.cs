@@ -16,21 +16,24 @@ public class Turret : MonoBehaviour
     public bool endedCooldown;
     public bool shot;
 
+    public bool hasParent;
+
+    // this event is for cooldowns
     public UnityEvent whenShot;
+
+    ShipController ship;
 
     private void Start() 
     {
-        canShoot = true;    
+        canShoot = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        diff.Normalize();
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+        StartFacing();
 
         if(Input.GetMouseButtonDown(0) && canShoot)
         {
@@ -49,12 +52,47 @@ public class Turret : MonoBehaviour
         }
     }
 
+    public void StartFacing()
+    {
+        // random math shit
+        Vector3 diff = mousePos - (Vector2)transform.position;
+        diff.Normalize();
+
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+        // the end of random math shit
+    }
+
     public virtual void Shoot()
     {
         var instObj = Instantiate(bullet, transform.position, Quaternion.identity);
         if(applyDamageOnBullet)
         {
             instObj.GetComponent<Bullet>().damage = damage;
+        }
+
+        // Recoil
+
+        // Debug.Log(mouse position: " + mousePos);
+
+        Vector2 diff = (Vector2)transform.position - mousePos;
+        
+
+        ship = GetShipParent();
+        Rigidbody2D shipRb = ship.GetComponent<Rigidbody2D>();
+
+        shipRb.AddForce(diff * 500f * Time.deltaTime);
+    }
+
+    public ShipController GetShipParent()
+    {
+        if(hasParent)
+        {
+            return transform.parent.parent.GetComponent<ShipController>();
+        }
+        else
+        {
+            return transform.parent.GetComponent<ShipController>();
         }
     }
 

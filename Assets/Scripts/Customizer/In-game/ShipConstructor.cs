@@ -33,12 +33,12 @@ public class ShipConstructor : MonoBehaviour
         // creates the turret
         GameObject shipTurret = Instantiate(shipScriptableObj.shipTurret);
         shipTurret.transform.parent = ship.transform;
-        SpriteRenderer turretSr = shipTurret.AddComponent<SpriteRenderer>();
+        // SpriteRenderer turretSr = shipTurret.AddComponent<SpriteRenderer>();
         
         // configuring the turret's sprite
-        turretSr.sprite = shipScriptableObj.shipHull;
-        turretSr.sortingLayerName = "Ships";
-        turretSr.sortingOrder = 10;
+        // turretSr.sprite = shipScriptableObj.shipHull;
+        // turretSr.sortingLayerName = "Ships";
+        // turretSr.sortingOrder = 10;
                 
         // spawns the ship
         Instantiate(tempLight, ship.transform);

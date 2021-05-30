@@ -257,6 +257,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mini Turrets
       objectReference: {fileID: 0}
+    - target: {fileID: 1871897158243711043, guid: 62b95e45106980d449cb120c5fbc07b1, type: 3}
+      propertyPath: hasParent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868215239635330384, guid: 62b95e45106980d449cb120c5fbc07b1, type: 3}
+      propertyPath: hasParent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8048911736315487372, guid: 62b95e45106980d449cb120c5fbc07b1, type: 3}
+      propertyPath: hasParent
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8057953702527348898, guid: 62b95e45106980d449cb120c5fbc07b1, type: 3}
       propertyPath: m_RootOrder
       value: 2

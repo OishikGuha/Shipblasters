@@ -7,7 +7,6 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
 
-    public TextMeshProUGUI health;
     public TextMeshProUGUI enemyHealth;
     public TextMeshProUGUI enemiesKilledText;
     [Space]
@@ -31,7 +30,6 @@ public class UIManager : MonoBehaviour
             gottenShip = true;
         }
 
-        health.text = $"HEALTH: {ship.health.ToString()}";
         enemiesKilledText.text = $"{enemiesKilled}";
     }
 }
