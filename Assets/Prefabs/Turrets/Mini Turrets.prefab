@@ -166,6 +166,7 @@ MonoBehaviour:
   canShoot: 0
   endedCooldown: 0
   shot: 0
+  hasParent: 1
   whenShot:
     m_PersistentCalls:
       m_Calls: []
@@ -220,6 +221,7 @@ MonoBehaviour:
   canShoot: 0
   endedCooldown: 0
   shot: 0
+  hasParent: 1
   whenShot:
     m_PersistentCalls:
       m_Calls: []
@@ -438,6 +440,7 @@ MonoBehaviour:
   canShoot: 0
   endedCooldown: 0
   shot: 0
+  hasParent: 1
   whenShot:
     m_PersistentCalls:
       m_Calls: []

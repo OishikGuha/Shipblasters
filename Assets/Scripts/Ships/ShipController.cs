@@ -13,9 +13,7 @@ public class ShipController : MonoBehaviour
     [Space]
     public bool ally;
     public float health = 100f;
-    [Space]
-    public GameObject explosionParticle;    
-
+    
     Rigidbody2D rb;
     float horizontal;
     float vertical;
@@ -48,7 +46,7 @@ public class ShipController : MonoBehaviour
 
     public void Die()
     {   
-        Instantiate(explosionParticle, transform.position, Quaternion.identity);
+        Instantiate(GameManager._explosionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

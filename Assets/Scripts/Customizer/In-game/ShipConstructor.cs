@@ -22,9 +22,15 @@ public class ShipConstructor : MonoBehaviour
         SpriteRenderer shipSr = ship.AddComponent<SpriteRenderer>();
 
         ship.tag = "Ship";
+
+        // configuring the ship's rigidbody
         shipRb.gravityScale = 0;
+        shipRb.drag = 1;
+
+        // configuring the ship's controller
         shipController.speed = shipScriptableObj.speed;
-        
+        shipController.turningDivisor = 5;
+
         // configuring the ship's sprite
         shipSr.sprite = shipScriptableObj.shipHull;
         shipSr.sortingLayerName = "Ships";
@@ -33,8 +39,8 @@ public class ShipConstructor : MonoBehaviour
         // creates the turret
         GameObject shipTurret = Instantiate(shipScriptableObj.shipTurret);
         shipTurret.transform.parent = ship.transform;
-        // SpriteRenderer turretSr = shipTurret.AddComponent<SpriteRenderer>();
         
+        // SpriteRenderer turretSr = shipTurret.AddComponent<SpriteRenderer>();
         // configuring the turret's sprite
         // turretSr.sprite = shipScriptableObj.shipHull;
         // turretSr.sortingLayerName = "Ships";

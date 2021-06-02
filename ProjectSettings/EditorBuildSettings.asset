@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 230b2af4d0f1ca141b0bbf2b807721b8
+  - enabled: 1
     path: Assets/Scenes/Ship Customizer.unity
     guid: 79ef907aa6c6e3548a0adda939186674
   - enabled: 1

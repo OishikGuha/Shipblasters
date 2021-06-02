@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SaveDisplay : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +15,15 @@ public class SaveDisplay : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene("Ship Customizer");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

@@ -10,6 +10,6 @@ public class CustomizerConstructor : MonoBehaviour
 
     public void Construct()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Main");
     }
 }

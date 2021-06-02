@@ -28,7 +28,7 @@ public class CustomizerShipTransporter : MonoBehaviour
         TurretObj = selector.selectedTurret;
         speed = selector.speed;
 
-        if(SceneManager.GetActiveScene().buildIndex == 1)
+        if(SceneManager.GetActiveScene().name == "Main")
         {
             inGame = true;
         }

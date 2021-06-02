@@ -6,8 +6,6 @@ using UnityEditor;
 public class ExplosiveBarrels : MonoBehaviour
 {
 
-    public GameObject explosionParticle;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +33,23 @@ public class ExplosiveBarrels : MonoBehaviour
 
             // destroying stuff
             ship.Damage(30);
-            Instantiate(explosionParticle, gameObject.transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            Explode();    
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col) 
+    {
+        if(col.gameObject.CompareTag("Player Projectile"))
+        {
+            Debug.Log("epic gamer momento");
+            Destroy(col.gameObject);
+            Explode();
+        }    
+    }
+
+    public void Explode()
+    {
+        Instantiate(GameManager._explosionParticle, gameObject.transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

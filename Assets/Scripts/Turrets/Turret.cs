@@ -66,12 +66,13 @@ public class Turret : MonoBehaviour
     public virtual void Shoot()
     {
         var instObj = Instantiate(bullet, transform.position, Quaternion.identity);
+        var instObjBullet = instObj.GetComponent<Bullet>();
+        
+        instObjBullet.tag = "Player Projectile";    
         if(applyDamageOnBullet)
         {
-            instObj.GetComponent<Bullet>().damage = damage;
+            instObjBullet.damage = damage;
         }
-
-        // Recoil
 
         // Debug.Log(mouse position: " + mousePos);
 

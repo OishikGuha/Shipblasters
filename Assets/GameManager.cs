@@ -8,9 +8,15 @@ public class GameManager : MonoBehaviour
     [Tooltip("for development in scene")]public bool spawnPlayerAtStart;
     public GameObject ship;
 
+    public GameObject explosionParticle;
+    public static GameObject _explosionParticle;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        _explosionParticle = explosionParticle;
+
         if(spawnPlayerAtStart && ship != null)
         {
             Instantiate(ship);
