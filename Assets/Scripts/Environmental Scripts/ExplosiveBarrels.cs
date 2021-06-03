@@ -6,10 +6,12 @@ using UnityEditor;
 public class ExplosiveBarrels : MonoBehaviour
 {
 
+    BarrelCollider barrelCollider;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        barrelCollider = GetComponentInChildren<BarrelCollider>();
     }
 
     // Update is called once per frame
@@ -25,15 +27,11 @@ public class ExplosiveBarrels : MonoBehaviour
             // getting stuff
             ShipController ship = col.gameObject.GetComponent<ShipController>();
             Rigidbody2D shipRb = col.gameObject.GetComponent<Rigidbody2D>();
-
-            // force for the ship
-            Vector2 diff = ship.transform.position - gameObject.transform.position;
-            Debug.Log(diff);
-            shipRb.AddForce(diff.normalized * 5000f * Time.deltaTime);
+            
+            Explode();    
 
             // destroying stuff
             ship.Damage(30);
-            Explode();    
         }
     }
 
@@ -49,6 +47,14 @@ public class ExplosiveBarrels : MonoBehaviour
 
     public void Explode()
     {
+        // force for the ship
+        for (int i = 0; i < barrelCollider.listOfColItems.Count; i++)
+        {
+            Vector2 diff = barrelCollider.listOfColItems[i].transform.position - gameObject.transform.position;
+            Debug.Log(diff);
+            barrelCollider.listOfColItems[i].GetComponent<Rigidbody2D>().AddForce(diff.normalized * 5000f * Time.deltaTime);
+        }
+
         Instantiate(GameManager._explosionParticle, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
