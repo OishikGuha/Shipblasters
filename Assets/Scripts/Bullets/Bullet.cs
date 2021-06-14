@@ -7,14 +7,16 @@ public class Bullet : MonoBehaviour
 
     public float speed = 10f;
     public float damage = 10f;
-
+    [Space]
     public float speedDivisor = 4000f;
     public bool isEnemy;
-
+    [Space]
     public float minimumRandomAngle;
     public float maximumRandomAngle;
-
+    [Space]
     public float destroyDelay = 2f;
+    [Space]
+    public GameObject bulletHitEffect;
 
     ShipController selfShip;
 
@@ -104,11 +106,13 @@ public class Bullet : MonoBehaviour
         // Debug.Log("hit!");
         if(other.tag == "Enemy Ship" && !isEnemy)
         {   
+            Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
             EnemyShip shipCtrl = other.GetComponent<EnemyShip>();
             Damage(shipCtrl);
         }
         else if(other.tag == "Ship" && isEnemy)
         {
+            Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
             ShipController shipCtrl = other.GetComponent<ShipController>();
             DamagePlayer(shipCtrl);
         }

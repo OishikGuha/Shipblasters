@@ -9,7 +9,6 @@ public class EnemyShip : MonoBehaviour
     [Space]
     public float speedDivisor = 4000f;
     [Space]
-    public GameObject bullet;
     public Transform turret;
     [Space]
     public float health = 100f;
@@ -18,25 +17,19 @@ public class EnemyShip : MonoBehaviour
     [Space]
     public GameObject explosionParticle;
 
+
     float horizontal;
     float vertical;
 
     public Transform PlayerShip;
     float distFromPlayer;
 
-    bool gottenPlayer = false;
-    
-    
     bool shaking;
 
     // Update is called once per frame
     void Update()
     {
-        if(!gottenPlayer)
-        {
-            PlayerShip = FindObjectOfType<ShipController>().transform;
-            gottenPlayer = true;
-        }
+        PlayerShip = GameManager.FindShipFromCustomizer().transform;
 
         // calculates distance from player
         distFromPlayer = Vector2.Distance(transform.position, PlayerShip.position);
@@ -64,9 +57,9 @@ public class EnemyShip : MonoBehaviour
     }
 
     void Die()
-    {
+    {  
         Instantiate(explosionParticle, transform.position, Quaternion.identity);
-        UIManager.enemiesKilled++;
+        GameManager.enemiesKilled++;
         shaking = true;
         AudioManager.Play("Explosion");
         Debug.Log("Dead!");

@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
     [Space]
     public ShipController ship;
     public EnemyShip enemyShip;
-    public static int enemiesKilled;
 
     bool gottenShip;
 
@@ -30,6 +29,6 @@ public class UIManager : MonoBehaviour
             gottenShip = true;
         }
 
-        enemiesKilledText.text = $"{enemiesKilled}";
+        enemiesKilledText.text = $"{GameManager.enemiesKilled}";
     }
 }

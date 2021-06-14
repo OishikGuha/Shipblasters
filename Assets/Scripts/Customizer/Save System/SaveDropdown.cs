@@ -24,13 +24,6 @@ public class SaveDropdown : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(dropdown.value);
-        
-    }
-
     public void RefreshList()
     {
         // don't misunderstand the string, the list wont refresh if the dropdown's text says "i hate gamers"

@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: -936194281
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0096aa29d650935468d3a4727e26e13b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: cff760c1ffb8dc74a9dbebbc18c319e2, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   - {x: -0.06180137, y: -0.17009962, z: 0}
   m_ShapePathHash: 1148429064
   m_Mesh: {fileID: 0}
-  m_InstanceId: 37996
+  m_InstanceId: 103094
 --- !u!114 &5176722653445353845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,11 +150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6cdb35c0c8d9c48a98a13b22658b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7240036551437515159, guid: 98fa7217de97b1b48b4bff391997f4a3, type: 3}
+  bullet: {fileID: 1421159618706906777, guid: 89e25d59215db274a99ffce1ead736d0, type: 3}
   applyDamageOnBullet: 1
-  bulletDamage: 1
-  bulletDelay: 1
-  accuracy: 20
+  bulletDamage: 80
+  bulletDelay: 5
+  accuracy: 50
 --- !u!1 &4975756216706771475
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 7827152461030253775}
   - component: {fileID: 102397395035735675}
   m_Layer: 0
-  m_Name: Enemy Ship
+  m_Name: Heavy Enemy Ship
   m_TagString: Enemy Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,8 +231,8 @@ SpriteRenderer:
   m_SortingLayerID: -936194281
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f520193f3fbda6f4c805e50530eb0d92, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: dcfa8ca9e9aba6f43a7042e6e0dba5af, type: 3}
+  m_Color: {r: 1, g: 0.033018887, b: 0.033018887, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -312,9 +312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737297c0b14ea5547b43095fcd135f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   speedDivisor: 4000
-  bullet: {fileID: 7240036551437515159, guid: 98fa7217de97b1b48b4bff391997f4a3, type: 3}
   turret: {fileID: 4975756216600050898}
   health: 100
   minDistance: 2

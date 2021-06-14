@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public GameObject explosionParticle;
     public static GameObject _explosionParticle;
 
+    public static int enemiesKilled;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,17 +37,25 @@ public class GameManager : MonoBehaviour
 
     public static ShipController FindShipFromCustomizer()
     {
-        bool gottenShip = false;
-        if(!gottenShip)
+        try
         {
-            ShipController ship = FindObjectOfType<ShipController>();
-            gottenShip = true;
+            bool gottenShip = false;
+            if(!gottenShip)
+            {
+                ShipController ship = FindObjectOfType<ShipController>();
+                gottenShip = true;
 
-            return ship;
+                return ship;
+            }
+            else
+            {
+                Debug.LogError("Error: Cannot Find Ship!");
+                return null;
+            }            
         }
-        else
+        catch (System.NullReferenceException)
         {
-            Debug.LogError("Error: Cannot Find Ship!");
+            Debug.Log("trying to find ship...");
             return null;
         }
     }

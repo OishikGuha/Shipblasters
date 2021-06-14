@@ -47,6 +47,9 @@ public class ExplosiveBarrels : MonoBehaviour
 
     public void Explode()
     {
+        
+        CameraAnimations.Shake();
+        
         // force for the ship
         for (int i = 0; i < barrelCollider.listOfColItems.Count; i++)
         {
@@ -55,6 +58,7 @@ public class ExplosiveBarrels : MonoBehaviour
             barrelCollider.listOfColItems[i].GetComponent<Rigidbody2D>().AddForce(diff.normalized * 5000f * Time.deltaTime);
         }
 
+        AudioManager.Play("Explosion");
         Instantiate(GameManager._explosionParticle, gameObject.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

@@ -15,7 +15,14 @@ public class Missile : Bullet
 
     public override void MoveEnemyUpdate()
     {
-        target = GameManager.FindShipFromCustomizer();
+        try
+        {
+            target = GameManager.FindShipFromCustomizer();            
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("trying to find ship...");
+        }
         
         Vector2 direction =  target.transform.position - transform.position; 
         direction.Normalize();
