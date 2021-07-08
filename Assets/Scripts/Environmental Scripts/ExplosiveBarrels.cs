@@ -33,6 +33,17 @@ public class ExplosiveBarrels : MonoBehaviour
             // destroying stuff
             ship.Damage(30);
         }
+        if(col.gameObject.CompareTag("Enemy Ship"))
+        {
+            // getting stuff
+            EnemyShip ship = col.gameObject.GetComponent<EnemyShip>();
+            Rigidbody2D shipRb = col.gameObject.GetComponent<Rigidbody2D>();
+            
+            Explode();    
+
+            // destroying stuff
+            ship.Damage(30);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col) 

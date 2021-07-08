@@ -40,6 +40,7 @@ public class CustomizerShipTransporter : MonoBehaviour
             if(constructor)
             {
                 constructor.shipScriptableObj.shipHull = HullObj.GetComponent<SpriteRenderer>().sprite;
+                constructor.shipScriptableObj.shipCollider = HullObj.GetComponent<BoxCollider2D>();
                 constructor.shipScriptableObj.shipTurret = TurretObj;
                 constructor.shipScriptableObj.speed = speed;
                 if(!spawnd)

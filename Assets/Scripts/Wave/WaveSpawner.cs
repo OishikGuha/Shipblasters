@@ -22,16 +22,15 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < enemyWaves.Count; i++)
         {
-            if(enemyWaves[i].condition == WaveEnemy.conditions.timedMode)
+            if(enemyWaves[i].condition == WaveEnemy.Conditions.timedMode)
             {
-                Debug.Log("halal habibi");
                 if(CheckForTime(enemyWaves[i]))
                 {
                     ExecuteWave(enemyWaves[i]);
                 }
             }
             
-            if(enemyWaves[i].condition == WaveEnemy.conditions.enemyDeaths)
+            if(enemyWaves[i].condition == WaveEnemy.Conditions.enemyDeaths)
             {
                 if(CheckForKills(enemyWaves[i]))
                 {
@@ -39,7 +38,7 @@ public class WaveSpawner : MonoBehaviour
                 }
             }
             
-            if(enemyWaves[i].condition == WaveEnemy.conditions.onlyChildMode)
+            if(enemyWaves[i].condition == WaveEnemy.Conditions.onlyChildMode)
             {
                 ExecuteWave(enemyWaves[i]);    
             }
@@ -48,7 +47,7 @@ public class WaveSpawner : MonoBehaviour
 
     public void ExecuteWave(WaveEnemy wave)
     {
-        wave.spawner.Spawn();
+        wave.spawner.GetComponent<EnemySpawner>().Spawn();
         wave.executed = true;
         if(wave.waveIndex > -1)
         {

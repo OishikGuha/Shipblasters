@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8055364715892907474}
   - component: {fileID: 8055364715892907475}
+  - component: {fileID: 6678279504103025893}
   m_Layer: 0
   m_Name: WaveSpawner
   m_TagString: Untagged
@@ -38,10 +39,39 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8055364715892907485}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c96604471ebdbc4498d538935483a3e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyWaves: []
+  waveEnemy:
+    waveName: 
+    spawner: {fileID: 0}
+    condition: 0
+    seconds: 0
+    enemyDeaths: 0
+    waveIndex: 0
+    executed: 0
   time: 0
+--- !u!114 &6678279504103025893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055364715892907485}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c9c9a2bea08c3047a5b61a14545cd26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start: 1
+  waveSpawner: {fileID: 8055364715892907475}
+  enemySpawner: {fileID: 5351887679423688429, guid: cf277755c5c64634ba60b15df35aed8f, type: 3}
+  minWaves: 1
+  maxWaves: 3
+  minSpawnPosition: {x: -5, y: -5}
+  maxSpawnPosition: {x: 5, y: 5}
+  isRepeating: 1
+  repeatDelay: 4

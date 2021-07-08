@@ -4910,6 +4910,9 @@ MonoBehaviour:
   maximumRandomAngle: 0
   destroyDelay: 2
   bulletHitEffect: {fileID: 5243052217219861890, guid: 1d979fa2a2ec2ef4184e87645633442f, type: 3}
+  playerShieldLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!61 &-7925185257279642788
 BoxCollider2D:
   m_ObjectHideFlags: 0

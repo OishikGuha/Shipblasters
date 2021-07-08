@@ -17,6 +17,7 @@ public class Bullet : MonoBehaviour
     public float destroyDelay = 2f;
     [Space]
     public GameObject bulletHitEffect;
+    public LayerMask playerShieldLayer;
 
     ShipController selfShip;
 
@@ -29,6 +30,8 @@ public class Bullet : MonoBehaviour
         }
         else
         {
+            transform.tag = "Enemy Bullet";
+            gameObject.layer = LayerMask.NameToLayer("Enemy Bullet");
             MoveEnemyStart();
         }
         
@@ -115,6 +118,10 @@ public class Bullet : MonoBehaviour
             Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
             ShipController shipCtrl = other.GetComponent<ShipController>();
             DamagePlayer(shipCtrl);
+        }
+        else if(other.gameObject.layer == playerShieldLayer)
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -7,6 +7,7 @@ public class ShipScriptableObj : ScriptableObject
 {
     public string shipName;
     public Sprite shipHull;
+    public BoxCollider2D shipCollider;
     public GameObject shipTurret;
     [Space]
     public float speed;

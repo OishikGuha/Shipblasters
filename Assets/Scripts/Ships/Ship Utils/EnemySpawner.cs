@@ -11,7 +11,7 @@ public class EnemySpawner : MonoBehaviour
     public bool spawnAtStart;
     public bool shouldRepeat;
 
-    bool spawned;
+    public bool spawned = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +33,8 @@ public class EnemySpawner : MonoBehaviour
 
     public void Spawn()
     {
-        if(!spawned)
+        
+        if(!shouldRepeat)
         {
             Instantiate(particle, transform.position, Quaternion.identity);
             Instantiate(enemy, transform.position, Quaternion.identity);

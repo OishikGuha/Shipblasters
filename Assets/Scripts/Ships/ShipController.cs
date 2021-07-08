@@ -13,24 +13,52 @@ public class ShipController : MonoBehaviour
     [Space]
     public bool ally;
     public float health = 100f;
-    
+    [Header("Dash Settings")]
+    public KeyCode dashKey;
+    public float dashSpeed;
+    public float dashDistance;
+    public float dashCooldown;
+    public bool canDash = true;
+    [Header("Shield Settings")]
+    public bool isShieldOn;
+    public KeyCode shieldKey = KeyCode.E;
+    public float shieldCooldown;
+    public bool canShield = true;
+
     Rigidbody2D rb;
     float horizontal;
     float vertical;
+    ShieldScript shield;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        shield = GetComponentInChildren<ShieldScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        shield.isOn = isShieldOn;
+
         horizontal = Input.GetAxis("Horizontal");        
         vertical = Input.GetAxis("Vertical");
 
         Move();
         CancelAngDrag();
+        
+        // if else hell 
+        if(Input.GetKeyDown(shieldKey) && canShield)
+        {
+            StartCoroutine("ShieldCooldown");
+            isShieldOn = true;  
+        }
+
+        if(Input.GetKeyDown(dashKey))
+        {
+            Debug.Log("ur such a sussy baka");
+            Dash(transform.up.normalized);
+        }
 
         if(health <=0)
         {
@@ -61,5 +89,29 @@ public class ShipController : MonoBehaviour
         {
             rb.angularVelocity = 0;            
         }
+    }
+
+    public void Dash(Vector2 dir)
+    {
+        if(canDash)
+        {
+            Debug.Log(dir);
+            rb.AddForce(dir * dashSpeed);
+            canDash = false;
+            StartCoroutine("DashCooldown");
+        }
+    }
+
+    IEnumerator DashCooldown()
+    {
+        yield return new WaitForSeconds(dashCooldown);
+        Debug.Log(dashCooldown);
+        canDash = true;
+    }
+
+    IEnumerator ShieldCooldown()
+    {
+        yield return new WaitForSeconds(shieldCooldown);
+        isShieldOn = false;
     }
 }

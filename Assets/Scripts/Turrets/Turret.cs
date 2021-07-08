@@ -22,9 +22,11 @@ public class Turret : MonoBehaviour
     public UnityEvent whenShot;
 
     ShipController ship;
+    Animator anim;
 
     private void Start() 
     {
+        anim = GetComponent<Animator>();
         canShoot = true;
     }
 
@@ -65,6 +67,7 @@ public class Turret : MonoBehaviour
 
     public virtual void Shoot()
     {
+        anim.SetTrigger("Shoot");
         var instObj = Instantiate(bullet, transform.position, Quaternion.identity);
         var instObjBullet = instObj.GetComponent<Bullet>();
         

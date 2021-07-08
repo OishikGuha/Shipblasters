@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5351887679423688426}
   - component: {fileID: 5351887679423688427}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,3 +47,4 @@ MonoBehaviour:
   particle: {fileID: 2458588131980302795, guid: 1e22f3fb7a552e14682b1f3be5361875, type: 3}
   spawnAtStart: 0
   shouldRepeat: 0
+  spawned: 0

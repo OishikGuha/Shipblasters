@@ -22,6 +22,7 @@ public class ShipConstructor : MonoBehaviour
         SpriteRenderer shipSr = ship.AddComponent<SpriteRenderer>();
 
         ship.tag = "Ship";
+        shipBoxCol = shipScriptableObj.shipCollider;
 
         // configuring the ship's rigidbody
         shipRb.gravityScale = 0;
@@ -46,7 +47,7 @@ public class ShipConstructor : MonoBehaviour
         // turretSr.sortingLayerName = "Ships";
         // turretSr.sortingOrder = 10;
                 
-        // spawns the ship
-        Instantiate(tempLight, ship.transform);
+        // // spawns the ship
+        // Instantiate(tempLight, ship.transform);
     }
 }

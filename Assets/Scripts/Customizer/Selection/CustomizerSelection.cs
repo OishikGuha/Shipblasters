@@ -6,5 +6,5 @@ using UnityEngine;
 public class CustomizerSelection
 {
     public string name;
-    public GameObject gameObject;
+    public GameObject gameObject;   
 }

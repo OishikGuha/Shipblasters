@@ -7,16 +7,18 @@ TagManager:
   - Ship
   - Enemy Ship
   - Player Projectile
+  - Enemy Bullet
+  - Player Shield
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Environment
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Enemy Bullet
+  - Player Shield
+  - Enemy Ship
   - 
   - 
   - 

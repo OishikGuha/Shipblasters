@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1505111857260234825}
   - component: {fileID: 1871897158243711043}
+  - component: {fileID: 7338042072604406861}
   m_Layer: 0
   m_Name: 'Turret '
   m_TagString: Untagged
@@ -170,6 +171,25 @@ MonoBehaviour:
   whenShot:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &7338042072604406861
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3983811949878874896}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 705831eb96593a94e8dae47fb7953c3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4637155078910476149
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1568684526355246336}
   - component: {fileID: 8048911736315487372}
+  - component: {fileID: 6278769390532798795}
   m_Layer: 0
   m_Name: Turret  (2)
   m_TagString: Untagged
@@ -225,6 +246,25 @@ MonoBehaviour:
   whenShot:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &6278769390532798795
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4637155078910476149}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 705831eb96593a94e8dae47fb7953c3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6155394936263525408
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8777173398177387132}
   - component: {fileID: 7868215239635330384}
+  - component: {fileID: 4141772578258351752}
   m_Layer: 0
   m_Name: Turret  (1)
   m_TagString: Untagged
@@ -444,3 +485,22 @@ MonoBehaviour:
   whenShot:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &4141772578258351752
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9055341832972505336}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 705831eb96593a94e8dae47fb7953c3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
