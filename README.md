@@ -1,2 +1,2 @@
 # Shipblasters
- game
+a game about blasting ships
