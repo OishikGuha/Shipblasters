@@ -9,6 +9,7 @@ TagManager:
   - Player Projectile
   - Enemy Bullet
   - Player Shield
+  - Mouse Pointer
   layers:
   - Default
   - TransparentFX

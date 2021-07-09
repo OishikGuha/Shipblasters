@@ -6,6 +6,9 @@ public class MapDragger : MonoBehaviour
 {
 
     public float zoomSensitivity;
+    [Space]
+    public Vector2 minCoords;
+    public Vector2 maxCoords;
 
     Vector3 mousePos;
     Vector3 diff;
@@ -31,7 +34,7 @@ public class MapDragger : MonoBehaviour
 
     public void Drag()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(1))
         {
             diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             if(!drag)
@@ -50,6 +53,8 @@ public class MapDragger : MonoBehaviour
             mainDiff = (Vector3.forward * -10f) + origin - diff;
             transform.position = mainDiff;
         }
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minCoords.x, maxCoords.x), Mathf.Clamp(transform.position.y, minCoords.y, maxCoords.y), -10f);
     }
 
     public void Zoom()
