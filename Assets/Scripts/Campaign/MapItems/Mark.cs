@@ -32,5 +32,5 @@ public class Mark : MonoBehaviour
             else
                 gotPlayer = false;
         }
-    }
+    }       
 }
