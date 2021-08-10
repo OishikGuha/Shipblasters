@@ -46,7 +46,6 @@ public class EnemyShip : MonoBehaviour
         if(shaking)
         {
             CameraAnimations.Shake();
-            Debug.Log("shaking!");
         }
 
         // checks if the distance from player is greater than the minimum, if it is it moves.
@@ -62,7 +61,6 @@ public class EnemyShip : MonoBehaviour
         GameManager.enemiesKilled++;
         shaking = true;
         AudioManager.Play("Explosion");
-        Debug.Log("Dead!");
 
         Destroy(gameObject);
     }

@@ -68,7 +68,6 @@ public static class CustomizerSaveSystem
 
         for (int i = 0; i < paths.Length; i++)
         {
-            Debug.Log(paths[i]);
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(paths[i], FileMode.Open);
 

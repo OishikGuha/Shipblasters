@@ -31,13 +31,14 @@ public class CampaignEventManager : MonoBehaviour
         {
             MakeEvents();
         }
+        EditEventBlock();
     }
 
     public void MakeEvents()
     {
-        prevEvents = events;
-
         RemoveBlocks();
+
+        prevEvents = events;
 
         for (int i = 0; i < events.Length; i++)
         {
@@ -64,5 +65,13 @@ public class CampaignEventManager : MonoBehaviour
             Destroy(eventBlocks[i].gameObject);
         }       
         eventBlocks.RemoveAll(delegate(EventBlock e){return true;});
+    }
+
+    void EditEventBlock()
+    {
+        for (int i = 0; i < events.Length; i++)
+        {       
+            eventBlocks[i].eventDesc = events[i];
+        }
     }
 }

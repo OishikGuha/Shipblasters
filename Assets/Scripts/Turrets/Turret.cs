@@ -70,6 +70,7 @@ public class Turret : MonoBehaviour
         anim.SetTrigger("Shoot");
         var instObj = Instantiate(bullet, transform.position, Quaternion.identity);
         var instObjBullet = instObj.GetComponent<Bullet>();
+        instObjBullet.isEnemy = false;
         
         instObjBullet.tag = "Player Projectile";    
         if(applyDamageOnBullet)
@@ -77,15 +78,17 @@ public class Turret : MonoBehaviour
             instObjBullet.damage = damage;
         }
 
-        // Debug.Log(mouse position: " + mousePos);
+        Recoil(300f);
+    }
 
+    public void Recoil(float force)
+    {
         Vector2 diff = (Vector2)transform.position - mousePos;
         
-
         ship = GetShipParent();
         Rigidbody2D shipRb = ship.GetComponent<Rigidbody2D>();
 
-        shipRb.AddForce(diff * 500f * Time.deltaTime);
+        shipRb.AddForce(diff * force * Time.deltaTime);
     }
 
     public ShipController GetShipParent()

@@ -47,7 +47,9 @@ MonoBehaviour:
   canvas: {fileID: 1507009102192294626}
   eventOrigin: {fileID: 1072236852564702551}
   eventBlock: {fileID: 2432635954855780039, guid: adb0bb79f633e9d479b9a06d3b5c4394, type: 3}
-  events: []
+  events:
+  - asasa\\
+  - sasasas
   eventBlocks: []
   spawningDistance: 90
 --- !u!1 &1507009102192294174

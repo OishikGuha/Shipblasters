@@ -17,7 +17,6 @@ public class UIQuestsManager : MonoBehaviour
     {
         questsManager = FindObjectOfType<QuestsManager>();
         MakeUIQuests();
-        Debug.Log(instQuestObjs.Count);
     }
 
     // Update is called once per frame

@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -936194281
   m_SortingLayer: 2
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: c6b757c32858cfa4e971fe662873f34c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 31016b5d3deb6db4186635f725865a59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,6 +152,10 @@ MonoBehaviour:
   minimumRandomAngle: 0
   maximumRandomAngle: 0
   destroyDelay: 10
+  bulletHitEffect: {fileID: 0}
+  playerShieldLayer:
+    serializedVersion: 2
+    m_Bits: 0
   rotateSpeed: 2
 --- !u!1 &2738681479413975858
 GameObject:

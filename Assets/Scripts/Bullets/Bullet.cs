@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class  Bullet : MonoBehaviour
 {
 
     public float speed = 10f;
@@ -20,10 +20,13 @@ public class Bullet : MonoBehaviour
     public LayerMask playerShieldLayer;
 
     ShipController selfShip;
+    protected Vector2 mousePosition;
 
     // Start is called before the first frame update
     void Start()    
     {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         if(!isEnemy)
         {
             MoveStart();
@@ -71,7 +74,7 @@ public class Bullet : MonoBehaviour
 
     public virtual void MoveStart()
     {
-        Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 diff = mousePosition - (Vector2)transform.position;
         diff.Normalize();
 
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
@@ -80,7 +83,7 @@ public class Bullet : MonoBehaviour
     
     public virtual void MoveUpdate()
     {
-        transform.Translate(Vector3.up / speedDivisor * speed, Space.Self);    
+        transform.Translate(Vector3.up / speedDivisor * speed * Time.deltaTime, Space.Self);    
     }
 
     public virtual void MoveEnemyStart()
@@ -96,7 +99,7 @@ public class Bullet : MonoBehaviour
     
     public virtual void MoveEnemyUpdate()
     {
-        transform.Translate(Vector3.up / speedDivisor * speed, Space.Self);    
+        transform.Translate(Vector3.up / speedDivisor * speed * Time.deltaTime, Space.Self);    
     }
 
     public void GetSelfShip(ShipController PselfShip)
@@ -104,7 +107,13 @@ public class Bullet : MonoBehaviour
         selfShip = PselfShip;
     }
 
-    private void OnTriggerStay2D(Collider2D other) 
+    public void ExplodeAndDie()
+    {
+        Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+    public virtual void OnTriggerStay2D(Collider2D other) 
     {
         // Debug.Log("hit!");
         if(other.tag == "Enemy Ship" && !isEnemy)
@@ -119,9 +128,14 @@ public class Bullet : MonoBehaviour
             ShipController shipCtrl = other.GetComponent<ShipController>();
             DamagePlayer(shipCtrl);
         }
-        else if(other.gameObject.layer == playerShieldLayer)
-        {
-            Destroy(gameObject);
-        }
+        // else if(other.gameObject.layer == playerShieldLayer)
+        // {
+        //     Destroy(gameObject);
+        // }
+        // else
+        // {
+
+        // }
     }
 }
+    

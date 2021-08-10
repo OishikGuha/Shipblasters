@@ -4902,9 +4902,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60eecdca4f6555e45b5bef0dd01a57e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 5000
   damage: 10
-  speedDivisor: 4000
+  speedDivisor: 1000
   isEnemy: 0
   minimumRandomAngle: 0
   maximumRandomAngle: 0

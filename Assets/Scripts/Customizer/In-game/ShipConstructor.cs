@@ -9,7 +9,9 @@ public class ShipConstructor : MonoBehaviour
     public bool enemy;
 
     public GameObject tempLight;
+    public GameObject shield;
     public float speed;
+    [Tooltip("For reserve")]public float shieldCooldown;
 
     public void Construct()
     {
@@ -18,11 +20,10 @@ public class ShipConstructor : MonoBehaviour
         
         ShipController shipController = ship.AddComponent<ShipController>();
         Rigidbody2D shipRb = ship.AddComponent<Rigidbody2D>();
-        BoxCollider2D shipBoxCol = ship.AddComponent<BoxCollider2D>();
+        PolygonCollider2D shipCol = ship.AddComponent<PolygonCollider2D>();
         SpriteRenderer shipSr = ship.AddComponent<SpriteRenderer>();
 
         ship.tag = "Ship";
-        shipBoxCol = shipScriptableObj.shipCollider;
 
         // configuring the ship's rigidbody
         shipRb.gravityScale = 0;
@@ -30,17 +31,36 @@ public class ShipConstructor : MonoBehaviour
 
         // configuring the ship's controller
         shipController.speed = shipScriptableObj.speed;
-        shipController.turningDivisor = 5;
+        shipController.turningDivisor = 1;
+        shipController.dashKey = KeyCode.Space;
+        shipController.dashSpeed = 400;
+        shipController.dashCooldown = 1.5f;
 
         // configuring the ship's sprite
         shipSr.sprite = shipScriptableObj.shipHull;
         shipSr.sortingLayerName = "Ships";
         shipSr.sortingOrder = 0;
+        
+        // configuring the ships's collider
+        List<Vector2> physicsShape = new List<Vector2>();
+        shipSr.sprite.GetPhysicsShape(0, physicsShape);
+        shipCol.points = physicsShape.ToArray();
 
         // creates the turret
         GameObject shipTurret = Instantiate(shipScriptableObj.shipTurret);
-        shipTurret.transform.parent = ship.transform;
-        
+        shipTurret.transform.SetParent(ship.transform);
+        shipController.turret = shipTurret.transform;
+
+        // creates the light
+        GameObject light = Instantiate(tempLight);
+        light.transform.SetParent(ship.transform);
+
+        // creates the shield
+        GameObject shi = Instantiate(shield);
+        shi.transform.SetParent(ship.transform);
+
+        Debug.Log("Constructed");
+
         // SpriteRenderer turretSr = shipTurret.AddComponent<SpriteRenderer>();
         // configuring the turret's sprite
         // turretSr.sprite = shipScriptableObj.shipHull;

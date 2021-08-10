@@ -50,7 +50,6 @@ public class ExplosiveBarrels : MonoBehaviour
     {
         if(col.gameObject.CompareTag("Player Projectile"))
         {
-            Debug.Log("epic gamer momento");
             Destroy(col.gameObject);
             Explode();
         }    

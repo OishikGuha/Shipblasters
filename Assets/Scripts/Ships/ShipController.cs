@@ -16,31 +16,30 @@ public class ShipController : MonoBehaviour
     [Header("Dash Settings")]
     public KeyCode dashKey;
     public float dashSpeed;
-    public float dashDistance;
     public float dashCooldown;
     public bool canDash = true;
+    bool canDash2 = true;
     [Header("Shield Settings")]
-    public bool isShieldOn;
     public KeyCode shieldKey = KeyCode.E;
-    public float shieldCooldown;
-    public bool canShield = true;
 
     Rigidbody2D rb;
     float horizontal;
     float vertical;
     ShieldScript shield;
+    Collider2D col;
+    SpriteRenderer sr;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         shield = GetComponentInChildren<ShieldScript>();
+        col = GetComponent<Collider2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        shield.isOn = isShieldOn;
-
         horizontal = Input.GetAxis("Horizontal");        
         vertical = Input.GetAxis("Vertical");
 
@@ -48,15 +47,13 @@ public class ShipController : MonoBehaviour
         CancelAngDrag();
         
         // if else hell 
-        if(Input.GetKeyDown(shieldKey) && canShield)
+        if(Input.GetKeyDown(shieldKey))
         {
-            StartCoroutine("ShieldCooldown");
-            isShieldOn = true;  
+            shield.TurnOn();
         }
 
         if(Input.GetKeyDown(dashKey))
         {
-            Debug.Log("ur such a sussy baka");
             Dash(transform.up.normalized);
         }
 
@@ -74,6 +71,7 @@ public class ShipController : MonoBehaviour
 
     public void Die()
     {   
+        GameManager.Restart();
         Instantiate(GameManager._explosionParticle, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
@@ -93,25 +91,27 @@ public class ShipController : MonoBehaviour
 
     public void Dash(Vector2 dir)
     {
-        if(canDash)
+        if(canDash && canDash2)
         {
-            Debug.Log(dir);
             rb.AddForce(dir * dashSpeed);
             canDash = false;
+            canDash2 = false;
             StartCoroutine("DashCooldown");
         }
     }
 
     IEnumerator DashCooldown()
     {
+        col.enabled = false;
+        sr.color = new Color(255,255,255,0.5f);
+        turret.gameObject.SetActive(false);
         yield return new WaitForSeconds(dashCooldown);
-        Debug.Log(dashCooldown);
-        canDash = true;
-    }
+        turret.gameObject.SetActive(true);
+        col.enabled = true;
+        sr.color = new Color(255,255,255,1f);
 
-    IEnumerator ShieldCooldown()
-    {
-        yield return new WaitForSeconds(shieldCooldown);
-        isShieldOn = false;
+        canDash = true;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash2 = true;
     }
 }

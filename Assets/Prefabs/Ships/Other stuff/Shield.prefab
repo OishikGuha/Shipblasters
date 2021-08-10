@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dcd4faf2830dea8419b8f6587c12185f, type: 2}
+  - {fileID: 2100000, guid: a1a7ff72c1126e44a8b8b8a23837103d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,11 +152,12 @@ MonoBehaviour:
   anim: {fileID: 0}
   shieldCollider: {fileID: 6355369610397408597}
   triggerShieldCollider: {fileID: 5018302137383607344}
-  isOn: 0
-  cooldownDelay: 0
   enemyBullet:
     serializedVersion: 2
     m_Bits: 64
+  cooldown: 2
+  canTurnOn: 1
+  isOn: 0
 --- !u!61 &6355369610397408597
 BoxCollider2D:
   m_ObjectHideFlags: 0

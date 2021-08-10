@@ -1,6 +1,7 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,7 +33,24 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ManageScenes();
+    }
+
+    void ManageScenes()
+    {
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            SceneManager.LoadScene(1);
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+    }
+
+    public static void Restart()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public static ShipController FindShipFromCustomizer()

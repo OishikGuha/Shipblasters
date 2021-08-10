@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7505813400956021976}
   - component: {fileID: 7505813400956021979}
   - component: {fileID: 7505813400956021978}
+  - component: {fileID: 8033829537178477847}
   m_Layer: 0
   m_Name: Default Turret
   m_TagString: Untagged
@@ -102,6 +103,26 @@ MonoBehaviour:
   canShoot: 0
   endedCooldown: 0
   shot: 0
+  hasParent: 0
   whenShot:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &8033829537178477847
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505813400956021977}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 705831eb96593a94e8dae47fb7953c3c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

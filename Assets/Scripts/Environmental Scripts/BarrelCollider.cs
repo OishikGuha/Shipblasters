@@ -24,7 +24,6 @@ public class BarrelCollider : MonoBehaviour
     {
         if(other.tag == "Ship" || other.tag == "Enemy")
         {
-            Debug.Log("sus");
             listOfColItems.Add(other.gameObject);
         }
     }

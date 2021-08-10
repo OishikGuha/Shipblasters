@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPlayerAtStart: 1
-  ship: {fileID: 5310131906142371431, guid: f97b9778bb557bf47874550d1f45c14e, type: 3}
+  ship: {fileID: 5310131906142371431, guid: 66ec653ae8389f74a8bc8052df4cd881, type: 3}
   explosionParticle: {fileID: 4739513736072636889, guid: e97cbd718ce692d49977975bf43638d4, type: 3}

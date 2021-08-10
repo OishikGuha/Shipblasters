@@ -24,14 +24,21 @@ public class CustomizerShipTransporter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HullObj = selector.selectedHull;
-        TurretObj = selector.selectedTurret;
-        speed = selector.speed;
 
         if(SceneManager.GetActiveScene().name == "Main")
         {
             inGame = true;
         }
+        else
+        {
+            selector = FindObjectOfType<CustomizerSelector>();
+
+            HullObj = selector.selectedHull;
+            TurretObj = selector.selectedTurret;
+            speed = selector.speed;
+
+            inGame = false;
+        }            
 
         if(inGame)
         {
@@ -47,6 +54,7 @@ public class CustomizerShipTransporter : MonoBehaviour
                 {
                     constructor.Construct();
                     spawnd = true;
+                    Destroy(gameObject);
                 }
             }
             else
