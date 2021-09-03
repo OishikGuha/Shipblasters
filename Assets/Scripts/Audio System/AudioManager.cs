@@ -17,6 +17,8 @@ public class AudioManager : MonoBehaviour
     {
         audioManager = gameObject;
         audioEffects = audioEffectsInspector;
+
+        AudioManager.Play("BlackHoleSound");
     }
 
     // Update is called once per frame

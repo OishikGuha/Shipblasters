@@ -10,6 +10,7 @@ public class ShipConstructor : MonoBehaviour
 
     public GameObject tempLight;
     public GameObject shield;
+    public GameObject cannons;
     public float speed;
     [Tooltip("For reserve")]public float shieldCooldown;
 
@@ -58,6 +59,10 @@ public class ShipConstructor : MonoBehaviour
         // creates the shield
         GameObject shi = Instantiate(shield);
         shi.transform.SetParent(ship.transform);
+
+        // Creates the cannonns
+        GameObject can = Instantiate(cannons);
+        can.transform.SetParent(ship.transform);
 
         Debug.Log("Constructed");
 

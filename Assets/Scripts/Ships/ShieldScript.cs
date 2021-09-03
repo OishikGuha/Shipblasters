@@ -13,10 +13,13 @@ public class ShieldScript : MonoBehaviour
     public bool canTurnOn;
     public bool isOn;
 
+    UIPowers powers;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
+        powers = FindObjectOfType<UIPowers>();
         canTurnOn = true;
     }
 
@@ -53,7 +56,9 @@ public class ShieldScript : MonoBehaviour
 
     public void TurnOn()
     {
+        AudioManager.Play("ShieldOn");
         isOn = true;
+        powers.FindAndRun("Shield", (int)cooldown * 2);
     }
 
 

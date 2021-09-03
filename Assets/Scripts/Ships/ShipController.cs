@@ -28,6 +28,7 @@ public class ShipController : MonoBehaviour
     ShieldScript shield;
     Collider2D col;
     SpriteRenderer sr;
+    UIPowers powers;
 
     void Start()
     {
@@ -93,6 +94,7 @@ public class ShipController : MonoBehaviour
     {
         if(canDash && canDash2)
         {
+            AudioManager.Play("Dash");
             rb.AddForce(dir * dashSpeed);
             canDash = false;
             canDash2 = false;

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 91412623543676117}
   m_Layer: 0
   m_Name: Explosive Barrel
-  m_TagString: Untagged
+  m_TagString: ExplosiveBarrel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,3 +205,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429ea74744b550642a4cc00d3b7c50bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listOfColItems: []
+  hasCollided: 0

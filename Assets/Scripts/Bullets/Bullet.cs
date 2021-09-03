@@ -55,13 +55,13 @@ public class  Bullet : MonoBehaviour
         
     }
 
-    public void Damage(EnemyShip shipController)
+    public virtual void Damage(EnemyShip shipController)
     {
         shipController.health -= damage;
         Destroy(gameObject);
     }
 
-    public void DamagePlayer(ShipController shipController)
+    public virtual void DamagePlayer(ShipController shipController)
     {
         shipController.health -= damage;
         Destroy(gameObject);
@@ -128,14 +128,6 @@ public class  Bullet : MonoBehaviour
             ShipController shipCtrl = other.GetComponent<ShipController>();
             DamagePlayer(shipCtrl);
         }
-        // else if(other.gameObject.layer == playerShieldLayer)
-        // {
-        //     Destroy(gameObject);
-        // }
-        // else
-        // {
-
-        // }
     }
 }
     

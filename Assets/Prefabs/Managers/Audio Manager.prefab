@@ -48,3 +48,27 @@ MonoBehaviour:
     description: plays an explosion sfx
     volume: 1
     audioClip: {fileID: 8300000, guid: 5823b87ead94a624d9a0473b568e4f90, type: 3}
+  - name: Dash
+    description: Dash
+    volume: 1
+    audioClip: {fileID: 8300000, guid: f3736857457f927428d840adab4b0a94, type: 3}
+  - name: ShieldOn
+    description: SHield on idnoaeinfdaopndfoainepf
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 61310da086374e34e9daad3606f056fa, type: 3}
+  - name: ShieldOff
+    description: Shield Off e
+    volume: 1
+    audioClip: {fileID: 8300000, guid: 68a6e900c8071834dba719247d094364, type: 3}
+  - name: CannonFire
+    description: plays a cannon fire sound
+    volume: 0.5
+    audioClip: {fileID: 8300000, guid: 639f4a177b95d7746a8dad9f82f17d9d, type: 3}
+  - name: GunfireForPlayer
+    description: plays a gun fire sound
+    volume: 0.05
+    audioClip: {fileID: 8300000, guid: a66f3e61b1d48784ba193c19d4d3356f, type: 3}
+  - name: BlackHoleSound
+    description: black hole
+    volume: 0.696
+    audioClip: {fileID: 8300000, guid: 4153a52e2ecd0c54b93e7ee3b95439c4, type: 3}

@@ -1,179 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &228368624036310312
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7053474546006828076}
-  - component: {fileID: 3327813206343686817}
-  m_Layer: 0
-  m_Name: Cannon Shooter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7053474546006828076
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228368624036310312}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: -0.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4674157520541439509}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3327813206343686817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228368624036310312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab563af44ebc3bf449310268538c033f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootKey: 102
-  cannonBall: {fileID: 3259266602385980322, guid: 0839b0427b8b3474fb3f1699523281ae, type: 3}
-  dir: 0
---- !u!1 &519826271824044387
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4623099738142762838}
-  - component: {fileID: 6299448879946210054}
-  m_Layer: 0
-  m_Name: Cannon Shooter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4623099738142762838
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519826271824044387}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 0.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4674157520541439509}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6299448879946210054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519826271824044387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab563af44ebc3bf449310268538c033f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootKey: 102
-  cannonBall: {fileID: 3259266602385980322, guid: 0839b0427b8b3474fb3f1699523281ae, type: 3}
-  dir: 0
---- !u!1 &2198970286213866942
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4674157520541439509}
-  m_Layer: 0
-  m_Name: Cannons
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4674157520541439509
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2198970286213866942}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 6828298536256015331}
-  - {fileID: 822355245897795746}
-  - {fileID: 5077076860469118902}
-  - {fileID: 4623099738142762838}
-  - {fileID: 7053474546006828076}
-  - {fileID: 4481515678325678042}
-  m_Father: {fileID: 5310131906142371428}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3767086891510288136
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 822355245897795746}
-  - component: {fileID: 8750506766692777231}
-  m_Layer: 0
-  m_Name: Cannon Shooter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &822355245897795746
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3767086891510288136}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4674157520541439509}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8750506766692777231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3767086891510288136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab563af44ebc3bf449310268538c033f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootKey: 102
-  cannonBall: {fileID: 3259266602385980322, guid: 0839b0427b8b3474fb3f1699523281ae, type: 3}
-  dir: 1
 --- !u!1 &5310131906142371431
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,6 +13,7 @@ GameObject:
   - component: {fileID: 4961333133335397916}
   - component: {fileID: 4941238880015055342}
   - component: {fileID: 7938901513607397448}
+  - component: {fileID: 7851326185588818972}
   m_Layer: 0
   m_Name: Dummy Ship
   m_TagString: Ship
@@ -226,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   speedDivisor: 4000
-  turningDivisor: 5
+  turningDivisor: 0.5
   turret: {fileID: 1085379988415965138}
   ally: 1
   health: 100
@@ -333,144 +160,80 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &6102404912706644713
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4481515678325678042}
-  - component: {fileID: 8987319762212445710}
-  m_Layer: 0
-  m_Name: Cannon Shooter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4481515678325678042
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6102404912706644713}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: -0.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4674157520541439509}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8987319762212445710
+--- !u!114 &7851326185588818972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6102404912706644713}
+  m_GameObject: {fileID: 5310131906142371431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab563af44ebc3bf449310268538c033f, type: 3}
+  m_Script: {fileID: 11500000, guid: b79791bb12a111b47bbdc2e81f49bd10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootKey: 102
-  cannonBall: {fileID: 3259266602385980322, guid: 0839b0427b8b3474fb3f1699523281ae, type: 3}
-  dir: 1
---- !u!1 &6464254448270843386
-GameObject:
+--- !u!1001 &2861051640336134720
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6828298536256015331}
-  - component: {fileID: 3672311495537624697}
-  m_Layer: 0
-  m_Name: Cannon Shooter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6828298536256015331
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5310131906142371428}
+    m_Modifications:
+    - target: {fileID: 4120847113923991550, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+      propertyPath: m_Name
+      value: Cannons
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451644078143267925, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451644078143267925, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451644078143267925, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451644078143267925, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451644078143267925, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451644078143267925, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451644078143267925, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451644078143267925, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451644078143267925, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451644078143267925, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7451644078143267925, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+--- !u!4 &4674157520541439509 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7451644078143267925, guid: 7d3ff9574068dd7448bef601d3410264, type: 3}
+  m_PrefabInstance: {fileID: 2861051640336134720}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6464254448270843386}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4674157520541439509}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3672311495537624697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6464254448270843386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab563af44ebc3bf449310268538c033f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootKey: 102
-  cannonBall: {fileID: 3259266602385980322, guid: 0839b0427b8b3474fb3f1699523281ae, type: 3}
-  dir: 0
---- !u!1 &7681514867868506075
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5077076860469118902}
-  - component: {fileID: 5652069890932687207}
-  m_Layer: 0
-  m_Name: Cannon Shooter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5077076860469118902
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7681514867868506075}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4674157520541439509}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5652069890932687207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7681514867868506075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab563af44ebc3bf449310268538c033f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootKey: 102
-  cannonBall: {fileID: 3259266602385980322, guid: 0839b0427b8b3474fb3f1699523281ae, type: 3}
-  dir: 1
 --- !u!1001 &3775750646579873642
 PrefabInstance:
   m_ObjectHideFlags: 0

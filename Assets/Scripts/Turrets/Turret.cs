@@ -67,6 +67,7 @@ public class Turret : MonoBehaviour
 
     public virtual void Shoot()
     {
+        AudioManager.Play("GunfireForPlayer");
         anim.SetTrigger("Shoot");
         var instObj = Instantiate(bullet, transform.position, Quaternion.identity);
         var instObjBullet = instObj.GetComponent<Bullet>();
