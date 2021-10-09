@@ -137,7 +137,7 @@ MonoBehaviour:
   - {x: -0.06180137, y: -0.17009962, z: 0}
   m_ShapePathHash: 1148429064
   m_Mesh: {fileID: 0}
-  m_InstanceId: 120714
+  m_InstanceId: 39260
 --- !u!114 &5176722653445353845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7240036551437515159, guid: 98fa7217de97b1b48b4bff391997f4a3, type: 3}
+  bulletHitEffect: {fileID: 5243052217219861890, guid: 1d979fa2a2ec2ef4184e87645633442f, type: 3}
   applyDamageOnBullet: 1
   bulletDamage: 5
   bulletDelay: 0.8
@@ -231,8 +232,8 @@ SpriteRenderer:
   m_SortingLayerID: -936194281
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f520193f3fbda6f4c805e50530eb0d92, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4fe88ce64feb9004088d806047c16365, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -312,10 +313,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737297c0b14ea5547b43095fcd135f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 7
   speedDivisor: 4000
   turret: {fileID: 4975756216600050898}
-  health: 80
+  health: 50
   minDistance: 2
   explosionParticle: {fileID: 4739513736072636889, guid: e97cbd718ce692d49977975bf43638d4, type: 3}
   PlayerShip: {fileID: 0}

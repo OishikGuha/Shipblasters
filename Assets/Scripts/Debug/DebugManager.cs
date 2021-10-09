@@ -41,7 +41,11 @@ public class DebugManager : MonoBehaviour
     {
         for (int i = 0; i < debugItems.Count; i++)
         {
-            if(itemName == debugItems[i].name) { debugItems[i].action.Execute(); }
+            if(itemName == debugItems[i].name) 
+            { 
+                debugItems[i].Init(debugUI.GetComponent<DebugUIManager>().debugInput.text); 
+                debugItems[i].action.Execute(); 
+            }
         }
     }
 }

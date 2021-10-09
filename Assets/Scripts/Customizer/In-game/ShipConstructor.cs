@@ -11,6 +11,7 @@ public class ShipConstructor : MonoBehaviour
     public GameObject tempLight;
     public GameObject shield;
     public GameObject cannons;
+    public GameObject spellCaster;
     public float speed;
     [Tooltip("For reserve")]public float shieldCooldown;
 
@@ -46,6 +47,10 @@ public class ShipConstructor : MonoBehaviour
         List<Vector2> physicsShape = new List<Vector2>();
         shipSr.sprite.GetPhysicsShape(0, physicsShape);
         shipCol.points = physicsShape.ToArray();
+
+        // add spell caster
+        GameObject spell = Instantiate(spellCaster);
+        spell.transform.SetParent(ship.transform);
 
         // creates the turret
         GameObject shipTurret = Instantiate(shipScriptableObj.shipTurret);

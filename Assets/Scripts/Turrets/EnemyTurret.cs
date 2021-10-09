@@ -6,6 +6,7 @@ public class EnemyTurret : MonoBehaviour
 {
 
     public GameObject bullet;
+    public GameObject bulletHitEffect;
     public bool applyDamageOnBullet; 
     public float bulletDamage = 1f;
     [Space]
@@ -36,6 +37,7 @@ public class EnemyTurret : MonoBehaviour
         // bullet setup
         var instBullet = Instantiate(bullet, transform.position, Quaternion.identity);
         Bullet instBulletScript = instBullet.GetComponent<Bullet>();
+        instBulletScript.bulletHitEffect = bulletHitEffect;
         instBulletScript.maximumRandomAngle = accuracy;
         instBulletScript.minimumRandomAngle = -accuracy;
         instBulletScript.isEnemy = true;

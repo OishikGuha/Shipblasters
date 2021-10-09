@@ -7,6 +7,7 @@ public class BlackHole : MonoBehaviour
 {
 
     public List<string> tags;
+    public float range;
 
     public List<GameObject> objToPull = new List<GameObject>();
 
@@ -19,7 +20,7 @@ public class BlackHole : MonoBehaviour
         {
             GameObject g = (GameObject)obj[i];
 
-            if(tags.Contains(g.tag))
+            if(tags.Contains(g.tag) && Vector2.Distance(g.transform.position, transform.position) <= range)
             {
                 objToPull.Add(g);
             }
@@ -46,9 +47,7 @@ public class BlackHole : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Ship")
-            col.GetComponent<ShipController>().Die();
-        else
+        if(tags.Contains(col.tag))
             Destroy(col.gameObject);
 
     }

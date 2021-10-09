@@ -46,9 +46,11 @@ MonoBehaviour:
   debugItems:
   - name: Kill All Enemies
     action: {fileID: -223672924631561897, guid: a7cd73cc0b23c4d4b8f037b25f95ac2c, type: 3}
-  - name: Action 4
-    action: {fileID: 3166400801727604378, guid: 1e0f4427060aed442882cb373a656117, type: 3}
+  - name: Edit Speed
+    action: {fileID: -3832865033908069839, guid: cd69286944612b742ad583d71c728844, type: 3}
   - name: Action 5
-    action: {fileID: 3166400801727604378, guid: 1e0f4427060aed442882cb373a656117, type: 3}
+    action: {fileID: -3406157122247364714, guid: 101ee8bcc5aa855438993c8cf2bf23a5, type: 3}
+  - name: Die.
+    action: {fileID: 6109510309018293565, guid: 2bb2ff181bbde214f91a2dee15346107, type: 3}
   debugUI: {fileID: 0}
   debugIsOpen: 0

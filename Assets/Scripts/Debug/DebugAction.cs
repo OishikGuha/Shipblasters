@@ -5,10 +5,11 @@ using UnityEngine;
 public class DebugAction : MonoBehaviour
 {
 
+    public string input;
     public string actionName;
 
     public virtual void Execute()
     {
-        Debug.Log("executed debug action");
+
     }
 }

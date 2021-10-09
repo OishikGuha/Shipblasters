@@ -40,7 +40,6 @@ public class ShieldScript : MonoBehaviour
             shieldCollider.enabled = false;
             triggerShieldCollider.enabled = false;
             anim.SetBool("On", false);
-
         }
 
         LookAtMouse();

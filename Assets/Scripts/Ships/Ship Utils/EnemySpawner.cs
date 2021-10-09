@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 
-    public GameObject enemy;
+    public GameObject[] enemies;
     public GameObject particle;
 
     public bool spawnAtStart;
@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
         if(!shouldRepeat)
         {
             Instantiate(particle, transform.position, Quaternion.identity);
-            Instantiate(enemy, transform.position, Quaternion.identity);
+            Instantiate(enemies[Random.Range(0, enemies.Length)], transform.position, Quaternion.identity);
 
             spawned = true;
         }

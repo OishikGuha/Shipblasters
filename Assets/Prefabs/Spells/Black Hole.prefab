@@ -4905,8 +4905,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tags:
-  - EnemyShip
+  - Enemy Ship
   - ExplosiveBarrel
+  range: 10
   objToPull: []
 --- !u!58 &1698551502662185008
 CircleCollider2D:

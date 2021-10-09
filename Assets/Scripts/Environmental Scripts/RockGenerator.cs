@@ -10,6 +10,8 @@ public class RockGenerator : MonoBehaviour
     public float size;
     public float distance;
 
+    List<GameObject> instRocks = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +36,10 @@ public class RockGenerator : MonoBehaviour
                 locationX = x * distance + Random.Range(-.4f,.4f);
                 locationY = y * distance + Random.Range(-.4f,.4f);
 
-                Instantiate(rocks[Random.Range(0, rocks.Length)], new Vector2(locationX, locationY), Quaternion.identity, transform);
+                instRocks.Add(Instantiate(rocks[Random.Range(0, rocks.Length)], new Vector2(locationX, locationY), Quaternion.identity, transform));
             }
         }
 
-        transform.position = new Vector2(-25, -25);
+        transform.position = new Vector2(-50, -50);
     }
 }

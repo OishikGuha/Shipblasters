@@ -9,6 +9,7 @@ public class DebugUIManager : MonoBehaviour
     public DebugManager debugManager;
     public Dropdown dropdown;
     public Button executeButton;
+    public InputField debugInput;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,6 @@ public class DebugUIManager : MonoBehaviour
 
     public void ExecuteAction()
     {
-        debugManager.debugItems[dropdown.value].action.Execute();
+        debugManager.Execute(dropdown.options[dropdown.value].text);
     }
 }

@@ -64,7 +64,6 @@ public class ExplosiveBarrels : MonoBehaviour
         for (int i = 0; i < barrelCollider.listOfColItems.Count; i++)
         {
             Vector2 diff = barrelCollider.listOfColItems[i].transform.position - gameObject.transform.position;
-            Debug.Log(diff);
             barrelCollider.listOfColItems[i].GetComponent<Rigidbody2D>().AddForce(diff.normalized * 5000f * Time.deltaTime);
         }
 

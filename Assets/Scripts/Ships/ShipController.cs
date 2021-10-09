@@ -46,6 +46,7 @@ public class ShipController : MonoBehaviour
 
         Move();
         CancelAngDrag();
+        Pause();
         
         // if else hell 
         if(Input.GetKeyDown(shieldKey))
@@ -100,6 +101,14 @@ public class ShipController : MonoBehaviour
             canDash2 = false;
             StartCoroutine("DashCooldown");
         }
+    }
+
+    public void Pause()
+    {
+        if(Input.GetKeyDown(KeyCode.P))
+            FindObjectOfType<DebugManager>().Execute("Pause");
+        else if(Input.GetKeyUp(KeyCode.P))
+            FindObjectOfType<DebugManager>().Execute("UnPause");
     }
 
     IEnumerator DashCooldown()
