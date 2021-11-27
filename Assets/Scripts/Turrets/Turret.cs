@@ -15,6 +15,7 @@ public class Turret : MonoBehaviour
     public bool canShoot;
     public bool endedCooldown;
     public bool shot;
+    public bool keepBulletParented;
 
     public bool hasParent;
 
@@ -72,11 +73,17 @@ public class Turret : MonoBehaviour
         var instObj = Instantiate(bullet, transform.position, Quaternion.identity);
         var instObjBullet = instObj.GetComponent<Bullet>();
         instObjBullet.isEnemy = false;
+        instObjBullet.transform.rotation = Quaternion.Euler(0,0,180);
         
         instObjBullet.tag = "Player Projectile";    
         if(applyDamageOnBullet)
         {
             instObjBullet.damage = damage;
+        }
+
+        if(keepBulletParented)
+        {
+            instObj.transform.SetParent(transform);
         }
 
         Recoil(300f);

@@ -109,6 +109,7 @@ public class  Bullet : MonoBehaviour
 
     public void ExplodeAndDie()
     {
+        print("ded");
         Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
@@ -127,6 +128,12 @@ public class  Bullet : MonoBehaviour
             Instantiate(bulletHitEffect, transform.position, Quaternion.identity);
             ShipController shipCtrl = other.GetComponent<ShipController>();
             DamagePlayer(shipCtrl);
+        }
+        else if(other.tag == "ExplosiveBarrel")
+        {
+            ExplosiveBarrels b = other.GetComponent<ExplosiveBarrels>();
+            b.Explode();
+            ExplodeAndDie();
         }
     }
 }

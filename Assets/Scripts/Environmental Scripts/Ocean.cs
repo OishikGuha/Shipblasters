@@ -16,11 +16,11 @@ public class Ocean : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collision2D col)
-    {
-        if(col.gameObject.tag == "Ship")
-        {
-            print(":(");
-        }
-    }
+    // void OnTriggerEnter2D(Collision2D col)
+    // {
+    //     if(col.gameObject.tag == "Ship")
+    //     {
+    //         print(":(");
+    //     }
+    // }
 }

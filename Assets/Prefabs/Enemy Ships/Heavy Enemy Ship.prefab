@@ -137,7 +137,7 @@ MonoBehaviour:
   - {x: -0.06180137, y: -0.17009962, z: 0}
   m_ShapePathHash: 1148429064
   m_Mesh: {fileID: 0}
-  m_InstanceId: 40066
+  m_InstanceId: 106706
 --- !u!114 &5176722653445353845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6cdb35c0c8d9c48a98a13b22658b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1421159618706906777, guid: 89e25d59215db274a99ffce1ead736d0, type: 3}
+  bullet: {fileID: 1421159618706906777, guid: d7e1d99f1e892d8429f7a1548b2f538b, type: 3}
   bulletHitEffect: {fileID: 5243052217219861890, guid: 1d979fa2a2ec2ef4184e87645633442f, type: 3}
   applyDamageOnBullet: 1
   bulletDamage: 80

@@ -2012,8 +2012,10 @@ MonoBehaviour:
     gameObject: {fileID: 7505813400956021977, guid: 8c820a53229687f4ea2c3a2bd6a2bb45, type: 3}
   - name: Minigun
     gameObject: {fileID: 7782900615991444885, guid: 81abe8d4f22846f419ebd363674b6279, type: 3}
-  - name: Energy Cannon
-    gameObject: {fileID: 5949588842562815487, guid: 067c5c5e114c86041b72217127ddb0a4, type: 3}
+  - name: Laser Blaster
+    gameObject: {fileID: 7505813400956021977, guid: 588e09cd84857be4381553f5bcaee527, type: 3}
+  - name: Laser Mini Turret
+    gameObject: {fileID: 1544340329067637489, guid: 6178e5fb770c1a443a9a7f821dca9675, type: 3}
 --- !u!114 &1050891314
 MonoBehaviour:
   m_ObjectHideFlags: 0

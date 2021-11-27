@@ -33,10 +33,10 @@ public class ShipConstructor : MonoBehaviour
 
         // configuring the ship's controller
         shipController.speed = shipScriptableObj.speed;
-        shipController.turningDivisor = 1;
+        shipController.turningDivisor = .1f;
         shipController.dashKey = KeyCode.Space;
-        shipController.dashSpeed = 400;
-        shipController.dashCooldown = 1.5f;
+        shipController.dashSpeed = 800;
+        shipController.dashCooldown = 0.5f;
 
         // configuring the ship's sprite
         shipSr.sprite = shipScriptableObj.shipHull;

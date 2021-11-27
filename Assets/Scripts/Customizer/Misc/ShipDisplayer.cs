@@ -31,13 +31,14 @@ public class ShipDisplayer : MonoBehaviour
 
     void Display()
     {
+        print("e");
         prevHull = selector.selectedHull;
         prevTurret = selector.selectedTurret;
 
         Instantiate(selector.selectedHull, HullDisplay.transform);
         GameObject turret = Instantiate(selector.selectedTurret, TurretDisplay.transform);
 
-        if(turret.transform.childCount >= 1)
+        if(turret.transform.childCount > 0)
         {
             for (int i = 0; i < turret.transform.childCount; i++)
             {
